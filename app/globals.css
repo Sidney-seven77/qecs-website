@@ -1,0 +1,12 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { @apply bg-chalk text-ink font-body antialiased; }
+:focus-visible { outline: 3px solid #E3B23C; outline-offset: 3px; }
+.btn { @apply inline-flex items-center justify-center rounded-md px-6 py-3 font-semibold transition-colors duration-200; }
+.btn-primary { @apply bg-forest text-chalk hover:bg-moss; }
+.btn-sun { @apply bg-sun text-forest hover:bg-[#f0c452]; }
+.btn-line { @apply border border-forest text-forest hover:bg-forest hover:text-chalk; }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero-in { opacity: 0; animation: rise .8s cubic-bezier(.22,1,.36,1) forwards; }
+.hero-in:nth-child(2) { animation-delay: .12s; } .hero-in:nth-child(3) { animation-delay: .24s; } .hero-in:nth-child(4) { animation-delay: .36s; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .hero-in { animation: none; opacity: 1; } * { transition: none !important; } }
